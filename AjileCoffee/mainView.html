@@ -1,0 +1,34 @@
+﻿<div ng-controller="MainCtrl as vm">
+    <section layout="row" layout-align="center center" layout-wrap>
+        <md-button class="md-raised" ng-href="#/">Sessions</md-button>
+        <md-button class="md-raised" ng-href="#/topics/{{vm.sessionKey}}">Topics</md-button>
+    </section>
+    <h3>{{vm.title}}</h3>
+    <md-card>
+        <md-card-content>
+            <md-input-container>
+                <label>New Card</label>
+                <textarea ng-model="newTopic" columns="1" aria-label="New Card"></textarea>
+            </md-input-container>
+        </md-card-content>
+        <div class="md-actions" layout="row" layout-align="start center">
+            <md-button ng-click="vm.addTopic(newTopic); newTopic = ''">Save</md-button>
+            <md-button>Random</md-button>
+        </div>
+    </md-card>
+    <div ng-repeat="card in vm.cards">
+        <md-card>
+            <md-card-content>
+                {{card.topic}}
+            </md-card-content>
+            <div class="md-actions" layout="row" layout-align="start center">
+                <div ng-repeat="n in vm.getButtonsArray(card.$id) track by $index">
+                    <md-button ng-click="vm.downVote(card)" class="md-fab" aria-label="Vote">V</md-button>
+                </div>
+                <md-button ng-show="vm.votesLeft > 0" ng-click="vm.upVote(card)" class="md-fab" aria-label="Vote"></md-button>
+            </div>
+        </md-card>
+    </div>
+
+    <!--<pre>{{vm.myCards | json}}</pre>-->
+</div>

@@ -1,0 +1,40 @@
+﻿<!DOCTYPE html>
+
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <title>Agile Coffee</title>
+    <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no" />
+    <link rel="stylesheet" href="/node_modules/angular-material/angular-material.css">
+    <link rel="stylesheet" href="app.css" type="text/css" />
+</head>
+<body ng-app="agileCoffee">
+    <md-content>
+        <div class="container">
+            <!--<div ng-include="'sessionView.html'"></div>-->
+            <ng-view></ng-view>
+        </div>
+    </md-content>
+
+    <!-- Library Scripts -->
+    <script src="node_modules/angular/angular.js"></script>
+    <script src="node_modules/angular-aria/angular-aria.js"></script>
+    <script src="node_modules/angular-animate/angular-animate.js"></script>
+    <script src="node_modules/angular-resource/angular-resource.js"></script>
+    <script src="node_modules/angular-mocks/angular-mocks.js"></script>
+    <script src="node_modules/angular-route/angular-route.js"></script>
+    <script src="node_modules/angular-material/angular-material.js"></script>
+    <script src="node_modules/angularfire/dist/angularfire.js"></script>
+    <script src="node_modules/firebase/lib/firebase-web.js"></script>
+
+    <!-- Application Script -->
+    <script src="app.js"></script>
+    <!-- Controllers -->
+    <script src="mainCtrl.js"></script>
+    <script src="sessionCtrl.js"></script>
+    <script src="topicsCtrl.js"></script>
+    <!-- Domain -->
+    <script src="Domain/card.js"></script>
+    <script src="Domain/session.js"></script>
+</body>
+</html>
